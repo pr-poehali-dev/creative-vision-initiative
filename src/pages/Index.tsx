@@ -69,6 +69,18 @@ const Index = () => {
         bg="bg-[#f5f0e8]"
       />
 
+      {/* Современный Иркутск — фото + текст об исчезновении */}
+      <ImageText
+        id="gallery"
+        image="https://cdn.poehali.dev/projects/8f8ab115-1b87-4327-a5aa-696376443c91/files/2d0e263c-8e6e-4858-becd-b2a3aa13485e.jpg"
+        alt="Современный Иркутск"
+        label="Современный Иркутск"
+        placeholder="(здесь рассказать о том, что старые деревянные дома постепенно исчезают — их сносят ради новостроек, они горят, ветшают, и город теряет свой исторический облик)"
+        imageOrder="left"
+        bg="bg-neutral-900"
+        dark
+      />
+
       {/* Итоговый текст */}
       <TextSection
         id="epilogue"

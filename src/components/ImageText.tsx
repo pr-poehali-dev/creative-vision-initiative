@@ -6,6 +6,7 @@ interface ImageTextProps {
   placeholder: string;
   imageOrder?: "left" | "right";
   bg?: string;
+  dark?: boolean;
 }
 
 export default function ImageText({
@@ -16,6 +17,7 @@ export default function ImageText({
   placeholder,
   imageOrder = "right",
   bg = "bg-neutral-100",
+  dark = false,
 }: ImageTextProps) {
   return (
     <div
@@ -34,8 +36,8 @@ export default function ImageText({
           imageOrder === "right" ? "lg:mr-12 lg:order-1" : "lg:ml-12 lg:order-2"
         }`}
       >
-        <h3 className="uppercase mb-4 text-sm tracking-wide text-neutral-500">{label}</h3>
-        <p className="text-2xl lg:text-4xl text-neutral-900 leading-tight mb-6">
+        <h3 className={`uppercase mb-4 text-sm tracking-wide ${dark ? "text-neutral-400" : "text-neutral-500"}`}>{label}</h3>
+        <p className={`text-2xl lg:text-4xl leading-tight mb-6 ${dark ? "text-neutral-100" : "text-neutral-900"}`}>
           {placeholder}
         </p>
       </div>

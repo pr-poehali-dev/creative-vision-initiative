@@ -1,7 +1,11 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 
-export default function Hero() {
+interface HeroProps {
+  image?: string;
+}
+
+export default function Hero({ image }: HeroProps) {
   const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -19,7 +23,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full"
       >
         <img
-          src="https://cdn.poehali.dev/projects/8f8ab115-1b87-4327-a5aa-696376443c91/files/4ccf3206-4ec6-4f1b-a1bb-fd68ae7278c3.jpg"
+          src={image ?? "https://upload.wikimedia.org/wikipedia/commons/8/83/House_in_Irkutsk_city1.jpg"}
           alt="Исторический Иркутск"
           className="w-full h-full object-cover"
         />

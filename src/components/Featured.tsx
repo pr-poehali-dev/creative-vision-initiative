@@ -1,9 +1,13 @@
-export default function Featured() {
+interface FeaturedProps {
+  image?: string;
+}
+
+export default function Featured({ image }: FeaturedProps) {
   return (
     <div id="history" className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-[#f5f0e8]">
       <div className="flex-1 h-[400px] lg:h-[800px] mb-8 lg:mb-0 lg:order-2">
         <img
-          src="https://cdn.poehali.dev/projects/8f8ab115-1b87-4327-a5aa-696376443c91/files/51901ba4-dfa1-434b-a76b-4d12d089fe31.jpg"
+          src={image ?? "https://upload.wikimedia.org/wikipedia/commons/2/2d/Irkutsk%2C_Wooden_house%2C_Wooden_windows%2C_Russia.jpg"}
           alt="Деревянные дома Иркутска"
           className="w-full h-full object-cover"
         />

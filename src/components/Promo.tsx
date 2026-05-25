@@ -1,7 +1,11 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 
-export default function Promo() {
+interface PromoProps {
+  image?: string;
+}
+
+export default function Promo({ image }: PromoProps) {
   const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -18,8 +22,8 @@ export default function Promo() {
       <div className="fixed top-[-10vh] left-0 h-[120vh] w-full">
         <motion.div style={{ y }} className="relative w-full h-full">
           <img
-            src="https://cdn.poehali.dev/projects/8f8ab115-1b87-4327-a5aa-696376443c91/files/c059b11b-aacf-41c2-a23e-a3d362fec0ab.jpg"
-            alt="Резные наличники иркутских домов"
+            src={image ?? "https://upload.wikimedia.org/wikipedia/commons/f/f1/Irkutsk%2C_Siberia_1990_Traditional_Wooden_House.jpg"}
+            alt="Традиционный деревянный дом Иркутска"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/30" />
